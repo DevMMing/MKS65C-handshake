@@ -1,6 +1,5 @@
 #include "pipe_networking.h"
 
-<<<<<<< HEAD
 void sighand(int sig){
 
   if (sig == SIGINT){
@@ -8,12 +7,6 @@ void sighand(int sig){
   }
 
 
-=======
-static void sighandler( int signum){
-  if(signum == SIGINT){
-    
-  }
->>>>>>> 5113ea9ce25b3205941f6b59f97b67dd830ef3ff
 }
 int main() {
 
@@ -21,7 +14,6 @@ int main() {
   int to_server;
   int from_server;
 
-<<<<<<< HEAD
   from_server = client_handshake( &to_server );
   char * input = malloc(BUFFER_SIZE);
   char * output = malloc(BUFFER_SIZE);
@@ -35,9 +27,3 @@ int main() {
   }
  return 0;
 }
-=======
-  from_server = client_handshake( &to_server );	
-  while(1){
-  }
-}
->>>>>>> 5113ea9ce25b3205941f6b59f97b67dd830ef3ff
