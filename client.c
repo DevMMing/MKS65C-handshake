@@ -1,16 +1,20 @@
 #include "pipe_networking.h"
-
-void sighand(int sig){
+#include <signal.h>
+static void sighandler(int sig){
 
   if (sig == SIGINT){
     exit(0);
   }
-
+if (sig == SIGUSR1)
+    {
+        printf("Received SIGUSR1!\n");
+		printf("Parent Process: %d\n",getppid());
+}
 
 }
 int main() {
 
-  signal(SIGINT,sighand);
+  signal(SIGINT,sighandler);
   int to_server;
   int from_server;
 
