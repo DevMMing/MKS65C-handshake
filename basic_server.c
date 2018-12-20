@@ -32,9 +32,9 @@ int main() {
     printf("This server adds 13 to char (rot13)\n");
     while(read(from_client,input,BUFFER_SIZE)){
       input[strlen(input)] = '\0';
-      printf("[server]-Client Input: %s\n",input);
+      printf("Client has sent: %s\n",input);
       output = rot13(input);
-      printf("[server]-Sending [%s] to client\n",output);
+      printf("Client is getting [%s]\n",output);
       write(to_client,output,BUFFER_SIZE);
 
     }

@@ -22,12 +22,12 @@ int main() {
   char * input = malloc(BUFFER_SIZE);
   char * output = malloc(BUFFER_SIZE);
   while(1){
-    printf("[client]-User Input: ");
+    printf("My input to server: ");
     fgets(input,BUFFER_SIZE,stdin);
     strtok(input,"\n");
     write(to_server, input, BUFFER_SIZE);
     read(from_server, output, BUFFER_SIZE);
-    printf("[client]-Server Output: %s\n\n", output);
+    printf("The server returns: %s\n\n", output);
   }
  return 0;
 }
