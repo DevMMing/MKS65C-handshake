@@ -23,7 +23,6 @@ int main() {
 
   int to_client;
   int from_client;
-<<<<<<< HEAD
 
   char * input = malloc(BUFFER_SIZE);
   char * output = malloc(BUFFER_SIZE);
@@ -43,21 +42,4 @@ int main() {
   }
   return 0;
 }
-=======
-  char msg[BUFSIZ];
-  char str[BUFSIZ];
-  from_client = server_handshake( &to_client );
-  mkfifo(from_client);
-  while(1){
-	printf("Input message to server: ");
-   	scanf("%s", str);
-	if(!strcmp(str,"exit")){
-	printf("closing server");
-	break;
-	}
-	read(to_client,msg,sizeof(msg));
-	
-	write();
-  }
-}
->>>>>>> 5113ea9ce25b3205941f6b59f97b67dd830ef3ff
+
