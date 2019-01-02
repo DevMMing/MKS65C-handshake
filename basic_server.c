@@ -30,6 +30,7 @@ int main() {
   while(1){
     from_client = server_handshake( &to_client );
     printf("This server adds 13 to char (rot13)\n");
+	if(!fork()){
     while(read(from_client,input,BUFFER_SIZE)){
       input[strlen(input)] = '\0';
       printf("Client has sent: %s\n",input);
@@ -38,7 +39,9 @@ int main() {
       write(to_client,output,BUFFER_SIZE);
 
     }
-
+	}
+	else{
+	}
   }
   return 0;
 }
